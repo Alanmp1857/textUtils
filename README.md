@@ -1,13 +1,14 @@
-TextUtils
-A tool for analyzing text data.
+# TextUtils
 
+A tool for analyzing text data.
 It is a simple ReactJS project or website in which we can Analyze text.
 
-What Can We do from Textutils ?
-1)Clearing the text
-2)UPPERCASE
-3)lowercase
-4)Extra Spaces Remover
+# What Can We do from Textutils ?
+
+1) Clearing the text
+2) UPPERCASE
+3) lowercase
+4) Extra Spaces Remover
 
 Also has Dark Mode.
 
