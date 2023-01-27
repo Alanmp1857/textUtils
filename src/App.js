@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light')    //whether dark mode is enabled or not
@@ -44,13 +45,20 @@ function App() {
   return (
     <>
       {/* <Navbar title="TextUtils" aboutText="AboutUs" /> */}
+      <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} /> 
-      {/* <Navbar /> */}
-      <div className="container">
-        <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
-        {/* <About /> */}
+        <div className="container">
+        <Switch>
+          <Route exact path="/">
+            <TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode} />
+          </Route>
+          <Route exact path="/about">
+            <About mode={mode} />
+          </Route>
+        </Switch>
       </div>
+      </Router>
     </>
   );
 }
